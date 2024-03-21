@@ -253,6 +253,12 @@ void makeMovement(){
   }
 }
 
+void sendApi(){
+  server.send(200, "application/json", WiFi.localIP().toString());
+  Serial.print(F("done."));
+  Serial.println("");
+}
+
 void setupWifi(){
   Serial.println();
   Serial.println();
@@ -279,6 +285,7 @@ void restServerRouting() {
   server.on(F("/command"), HTTP_POST, changeCommand);
   server.on(F("/lastCommand"), HTTP_GET, getLastCommand);
   server.on(F("/makeMove"), HTTP_POST, makeMovement);
+  server.on(F("/makeMove"), HTTP_GET, sendApi);
 }
 
 void setup() {
