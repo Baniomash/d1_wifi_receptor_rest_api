@@ -254,7 +254,7 @@ void makeMovement(){
 }
 
 void sendApi(){
-  server.send(200, "application/json", WiFi.localIP().toString());
+  server.send(200, "application/json", "http://"+WiFi.localIP().toString()+":3000/makeMove");
   Serial.print(F("done."));
   Serial.println("");
 }
