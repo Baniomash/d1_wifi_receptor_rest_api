@@ -77,8 +77,8 @@ const uint16_t irPin = 4;
 IRsend irsend(irPin);
 
 // WiFi configs
-const char* ssid = "FAMILIA MEDEIROS";
-const char* password = "sl23jo316";
+const char* ssid = "Lab_Hardware";
+const char* password = "abcd@1234";
 
 WiFiClient espClient;
 ESP8266WebServer server(3000);
